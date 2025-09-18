@@ -21,9 +21,10 @@ class RemoteSnippet < Liquid::Tag
 
   def render(context)
     title = context.registers[:site].config['title']
-    prefix = context.registers[:site].config['gitbox_url']
-    url = "#{prefix};a=blob_plain;hb=HEAD;f=#{@path}"
-    pretty_url = "#{prefix};a=blob;hb=HEAD;f=#{@path}"
+    prefix = context.registers[:site].config['git_repo']
+    blob/HEAD/tutorial/go/src/server.go
+    url = "#{prefix}/blob/HEAD/#{@path}"
+    pretty_url = "#{prefix}/blob/HEAD/#{@path}"
     content = ""
     if @range == "all"
       URI.open(url) {|f| content = f.read }
