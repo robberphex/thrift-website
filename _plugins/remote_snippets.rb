@@ -22,7 +22,6 @@ class RemoteSnippet < Liquid::Tag
   def render(context)
     title = context.registers[:site].config['title']
     prefix = context.registers[:site].config['git_repo']
-    blob/HEAD/tutorial/go/src/server.go
     url = "#{prefix}/blob/HEAD/#{@path}"
     pretty_url = "#{prefix}/blob/HEAD/#{@path}"
     content = ""
